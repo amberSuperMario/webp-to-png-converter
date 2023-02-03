@@ -29,8 +29,9 @@ done
 if [ $PROMPT = "y" ]; then
     echo -e "\n"
     for FILE in *.webp; do
-        ffmpeg -hide_banner -loglevel error -i $FILE ./converted/${FILE::-5}.png
+        ffmpeg -hide_banner -loglevel error -i "$FILE" "./converted/${FILE::-5}.png"
     done
+    echo "Conversion finished."
 elif [ $PROMPT = "n" ]; then
     echo -e "\nOperation cancelled."
 fi
